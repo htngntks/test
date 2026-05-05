@@ -30,8 +30,10 @@ public class CalculatorTest {
     }
     @Test
     public void testFilePath() {
-        String expectedPath = "logs/app.log";
-        File logFile = new File("logs", "app.log");
-        assertEquals(expectedPath, logFile.getPath());
+        // Sử dụng thư viện NIO của Java để xử lý đường dẫn an toàn
+        java.nio.file.Path expectedPath = java.nio.file.Paths.get("logs", "app.log");
+        java.nio.file.Path logFile = java.nio.file.Paths.get("logs").resolve("app.log");
+
+        assertEquals(expectedPath, logFile);
     }
 }
