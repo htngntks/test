@@ -1,12 +1,16 @@
 name: Java CI
 
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
@@ -14,7 +18,8 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: temurin
+          distribution: 'temurin'
+          cache: 'maven'
 
       - name: Build
         run: mvn package
@@ -22,5 +27,5 @@ jobs:
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
-          name: week8-jar
+          name: calculator-artifact-${{ matrix.os }}
           path: target/*.jar
