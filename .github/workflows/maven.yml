@@ -23,7 +23,7 @@ jobs:
         run: mvn clean package
 
       - name: Checkstyle PR comments
-        uses: reviewdog/action-checkstyle@v1
+        uses: dbelyaev/action-checkstyle@v3
         if: github.event_name == 'pull_request' && always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
