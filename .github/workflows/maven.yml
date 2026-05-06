@@ -10,6 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,14 +21,13 @@ jobs:
         with:
           java-version: '17'
           distribution: temurin
-          cache: 'maven'
 
-      - name: Build with Maven
-        run: mvn clean package
+      - name: Build
+        run: mvn package
 
       - name: Checkstyle PR comments
+        if: always()
         uses: dbelyaev/action-checkstyle@v3
-        if: github.event_name == 'pull_request' && always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
