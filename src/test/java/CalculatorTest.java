@@ -14,7 +14,7 @@ public class CalculatorTest {
         int expectedResult = 5;
         assertEquals(expectedResult, actualResult);
     }
-
+    //Test caching
     @Test
     public void testDivide1() {
         Calculator calculator = new Calculator();
