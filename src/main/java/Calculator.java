@@ -14,7 +14,7 @@ public class Calculator {
     public int add(int a, int b) {
         int result = a + b;
         LOGGER.info("In add() method: a={}, b={}, result={}", a, b, result);
-        return result;
+                    return result;
     }
 
     public int divide(int a, int b) {
