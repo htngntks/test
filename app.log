@@ -1,0 +1,9 @@
+12:09:41 [main] INFO  Calculator - In add() method: a=2, b=3, result=5
+12:09:41 [main] INFO  Calculator - In divide() method: a=6, b=3, result=2
+12:09:41 [main] ERROR Calculator - a=3, b=0
+10:05:56 [main] INFO  Calculator - In add() method: a=2, b=3, result=5
+10:05:56 [main] INFO  Calculator - In divide() method: a=6, b=3, result=2
+10:05:56 [main] ERROR Calculator - a=3, b=0
+10:32:30 [main] INFO  Calculator - In add() method: a=2, b=3, result=5
+10:32:30 [main] INFO  Calculator - In divide() method: a=6, b=3, result=2
+10:32:30 [main] ERROR Calculator - a=3, b=0
